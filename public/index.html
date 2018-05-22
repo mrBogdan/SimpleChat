@@ -59,7 +59,7 @@
     <div class="col-md-8">
         <div id="chat" class="chat"></div>
 
-        <form class="messageForm">
+        <form class="messageForm" id="messageForm">
             <div class="form-group">
                 <label for="message">Enter message</label>
                 <textarea id="message" class="form-control"></textarea>
@@ -89,7 +89,7 @@
             });
 
             socket.on('new message', function (data) {
-                $chat.append('<div class="well"><strong>: ' + data.user + '</strong>' + data.msg + '</div>')
+                $chat.append('<div class="well"><strong> ' + data.user + ' : </strong>' + data.msg + '</div>')
             });
 
             $userForm.submit(function (e) {
